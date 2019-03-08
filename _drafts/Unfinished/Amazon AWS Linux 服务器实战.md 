@@ -1,0 +1,15 @@
+
+
+
+
+
+## 相关命令：
+
+ssh-keygen 重新生产.ssh文件夹
+ssh -i ~/.ssh/amazon_aws.pem ec2-user@54.186.187.30
+
+netstat 接口信息
+netstat -I 打印接口信息
+netstat -in 打印出IP地址，而不是主机名
+
+apr 检查ARP高速缓存 
