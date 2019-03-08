@@ -1,3 +1,8 @@
+---
+title: JavaScript 单线程不简单
+date: 2017/8/29 18:19:18
+---
+
 我们常听说 JavaScript 是单线程的，那这个单线程是什么意思呢？单线程是否意味 JavaScript 存在性能缺陷呢？
 
 在浏览器端，JavaScript 单线程指的是 JavaScript 的执行线程与 UI 渲染线程共用一个线程。对于 NodeJS 而言，单线程指的是它的 JavaScript 执行线程是单线程。虽然 JavaScript 只能单线程执行，但 JavaScript 引擎可不是，它能够创建多个线程为主线程服务。Web Worker 已经得到大部分浏览器的支持，NodeJS 也拥有自己的线程池来处理 I/O 操作。无论前端还是后端，JavaScript 已经能够利用多个线程来提升程序性能了。

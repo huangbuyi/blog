@@ -1,3 +1,7 @@
+---
+title: MongoDB 安装
+date: 2017/8/8 00:00:00
+---
 
 ## Linux
 到 [mongoDB 官网](https://www.mongodb.com/download-center)找到最新压缩包链接，利用 Linux 下载工具获取安装包：
