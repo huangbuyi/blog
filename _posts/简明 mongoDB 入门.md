@@ -1,6 +1,10 @@
 ---
 title: 简明 MongoDB 入门教程
 date: 2017/8/8 00:00:00
+categories:
+- 数据库
+tags:
+- MongoDB
 ---
 
 MongoDB 是免费开源的跨平台 NoSQL 数据库，命名源于英文单词 hu**mongo**us，意思是「巨大无比」，可见开发组对 MongoDB 的定位。与关系型数据库不同，MongoDB 的数据以类似于 JSON 格式的二进制文档存储：

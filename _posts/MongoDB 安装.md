@@ -1,6 +1,10 @@
 ---
 title: MongoDB 安装
 date: 2017/8/8 00:00:00
+categories:
+- 数据库
+tags:
+- MongoDB
 ---
 
 ## Linux

@@ -1,6 +1,12 @@
 ---
 title: JavaScript Promise.all 和 Promise.race 方法介绍和简要实现
 date: 2019/3/12 00:00:00
+categories:
+- JavaScript
+tags:
+- JavaScript
+- NodeJS
+- Promise
 ---
 
 `Promise.all()` 方法接受一个包含 Promise 对象或普通值的数组(或其它可迭代对象)作为参数，并返回一个 Promise。当所有 Promise 对象都 resolve 后，将所有 resolve 值以数组形式作为 `Promise.all()` resolve 的结果。如果其中之一的 Promise 被 reject，立即以第一个 reject 的值作为 `Promise.all()` reject 结果。

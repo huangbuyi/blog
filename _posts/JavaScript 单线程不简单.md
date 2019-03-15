@@ -1,6 +1,11 @@
 ---
 title: JavaScript 单线程不简单
 date: 2017/8/29 18:19:18
+categories:
+- JavaScript
+tags:
+- JavaScript
+- NodeJS
 ---
 
 我们常听说 JavaScript 是单线程的，那这个单线程是什么意思呢？单线程是否意味 JavaScript 存在性能缺陷呢？

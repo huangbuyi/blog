@@ -1,6 +1,11 @@
 ---
 title: JavaScript 中 Object.defineProperty 的用法
 date: 2019/3/15 00:00:00
+categories:
+- JavaScript
+tags:
+- JavaScript
+- NodeJS
 ---
 
 在 JavaScript 中，常通过下面方式，添加或修改对象的属性：
