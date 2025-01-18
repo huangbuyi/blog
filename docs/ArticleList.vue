@@ -14,7 +14,6 @@ const posts = computed(() => {
   }).slice(0, max || 100)
 })
 
-console.log(posts.value);
 
 </script>
 

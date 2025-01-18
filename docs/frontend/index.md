@@ -4,7 +4,6 @@ title: 大前端
 
 <script setup>
 import ArticleList from '../ArticleList.vue';
-console.log(123)
 
 </script>
 

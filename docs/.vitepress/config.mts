@@ -18,7 +18,7 @@ export default defineConfig({
     nav: [
       { text: '主页', link: '/' },
       { text: '分类', items: cates.map(cate => ({ text: cate.text, link: `/${cate.name}` })) },
-      { text: '文章', link: '/all-articles' },
+      { text: '文章', link: '/all-articles/' },
       { text: '关于', link: '/about' },
     ],
     sidebar: createSidebar(cates),
@@ -37,7 +37,6 @@ function createSidebar(cates: CateItem[]): DefaultTheme.Sidebar {
     const link = `/${cate.name}`;
     const subcates = cate.children && createSidebarItems(cate.children, link);
     const item = {
-      link,
       text: cate.text,
       collapsed: true,
       items: subcates
@@ -54,9 +53,7 @@ function createSidebar(cates: CateItem[]): DefaultTheme.Sidebar {
       text: cate.text + ' - 全部文章'
     });
   }
-  sidebar['/'] = rootSidebar;
-
-  console.log(JSON.stringify(sidebar, null, 2));
+  sidebar['/all-articles'] = rootSidebar;
 
   return sidebar;
 }
