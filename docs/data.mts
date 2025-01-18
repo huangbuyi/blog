@@ -14,6 +14,18 @@ export const cates: CateItem[] = [
         name: 'pratical-javascript-tips'
       },
       {
+        text: 'TypeScript 实用技巧',
+        name: 'pratical-typescript-tips'
+      },
+      {
+        text: 'CSS 实用技巧',
+        name: 'pratical-css-tips'
+      },
+      {
+        text: 'HTML 实用技巧',
+        name: 'pratical-html-tips'
+      },
+      {
         text: 'VSCode 源码分析',
         name: 'vscode-source-analysis'
       },
