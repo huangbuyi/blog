@@ -30,8 +30,16 @@ export const cates: CateItem[] = [
         name: 'vscode-source-analysis'
       },
       {
+        text: '效率提升',
+        name: 'productivity'
+      },
+      {
         text: '前端杀虫记',
         name: 'frontend-debug-dairy'
+      },
+      {
+        text: '其它',
+        name: 'other'
       },
     ]
   },
