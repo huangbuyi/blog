@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { data } from './posts.data.mjs';
+import { base } from './data.mjs';
 
 const { cate, title, max } = defineProps<{
   cate?: string,
@@ -10,10 +11,9 @@ const { cate, title, max } = defineProps<{
 
 const posts = computed(() => {
   return data.filter(item => {
-    return item.url.startsWith(`/${cate || ''}`);
+    return item.url.startsWith(`${base}${cate || ''}`);
   }).slice(0, max || 100)
 })
-
 
 </script>
 

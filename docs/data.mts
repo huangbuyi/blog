@@ -44,3 +44,5 @@ export const cates: CateItem[] = [
     name: 'ct'
   }
 ]
+
+export const base = '/blog/';

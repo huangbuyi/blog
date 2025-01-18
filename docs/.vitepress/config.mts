@@ -12,6 +12,7 @@ export default defineConfig({
     ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
   description: "Neo's computer science blog.",
+  base: "/blog/",
   cleanUrls: true,
   themeConfig: {
     logo: '/icons/logo-be.svg',

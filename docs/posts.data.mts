@@ -1,6 +1,7 @@
 import { ContentData, createContentLoader } from 'vitepress';
-import { cates } from './data.mts';
+import { cates, base } from './data.mts';
 import  * as cheerio from 'cheerio';
+import path from 'path';
 
 const target = cates.map(cate => `${cate.name}/**/*.md`)
 
@@ -14,8 +15,13 @@ export default createContentLoader(target, {
     return rawData.filter(a => !a.url.endsWith('/')).sort((a, b) => {
       return +new Date(b.frontmatter.date) - +new Date(a.frontmatter.date)
     }).map((item) => {
+      if (item.frontmatter.cover) {
+        item.frontmatter.cover = path.posix.join(base, item.frontmatter.cover);
+      }
+
       return {
         ...item,
+        url: path.posix.join(base, item.url),
         excerptText: extractText(item.html)
       }
     });
