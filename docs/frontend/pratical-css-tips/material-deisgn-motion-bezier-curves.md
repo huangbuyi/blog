@@ -1,9 +1,14 @@
 ---
 title: Material Design 几种实用 Bezier 运动曲线
 date: 2025-1-10
+cover: /images/material-design-easing-curves.webp
 ---
 
-Material Design 的运动（Motion）规范中定义了几种常用的 `cubic-bezier` 曲线，用于创建一致且自然的动画效果。这些曲线旨在提供流畅、响应式的用户体验，并与物理世界中的运动相呼应。以下是 Material Design 中推荐的一些 `cubic-bezier` 曲线：
+Material Design 的运动（Motion）规范中定义了几种常用的 `cubic-bezier` 曲线，用于创建一致且自然的动画效果。这些曲线旨在提供流畅、响应式的用户体验，并与物理世界中的运动相呼应。
+
+![material-design-easing-curves](/images/material-design-easing-curves.webp)
+
+以下是 Material Design 中推荐的一些 `cubic-bezier` 曲线：
 
 ### 1. 标准曲线 (Standard Easing)
 
