@@ -9,7 +9,7 @@ import path from 'path';
 export default defineConfig({
   title: "「头哥」的技术博客",
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }]
+    ['link', { rel: 'icon', href: '/blog/favicon.ico' }]
   ],
   description: "Neo's computer science blog.",
   base: "/blog/",
