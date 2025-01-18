@@ -4,9 +4,6 @@ export interface CateItem {
   children?: CateItem[]
 }
 
-
-
-
 export const cates: CateItem[] = [
   {
     text: '大前端',

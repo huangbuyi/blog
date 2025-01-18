@@ -1,4 +1,4 @@
-import { CateItem, cates } from './data.mts';
+import { CateItem, cates } from '../data.mts';
 
 export default {
   paths() {

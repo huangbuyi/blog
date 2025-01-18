@@ -29,18 +29,10 @@ features:
 ---
 
 <script setup>
-import { data as posts } from './posts.data.mts'
-for (let post of posts) {
-  console.log(post.frontmatter.categor);
-}
+import ArticleList from './ArticleList.vue';
+
 </script>
 
 <div>
-  <h1>All Blog Posts</h1>
-  <ul>
-    <li v-for="post of posts">
-      <a :href="post.url">{{ post.frontmatter.title }}</a>
-      <span>by {{ post.frontmatter.author }}</span>
-    </li>
-  </ul>
+  <ArticleList title="最新文章" />
 </div>

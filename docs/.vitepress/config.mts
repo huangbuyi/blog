@@ -4,12 +4,12 @@ import matter from 'gray-matter';
 import { globSync } from 'tinyglobby';
 import fs from 'fs';
 import path from 'path';
-import { groupCollapsed } from 'console';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "「头哥」的技术博客",
   description: "Neo's computer science blog.",
+  cleanUrls: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -27,51 +27,60 @@ export default defineConfig({
 
 function createSidebar(cates: CateItem[]): DefaultTheme.Sidebar {
   const sidebar: DefaultTheme.Sidebar = {};
-  const sidebarByCate: Record<string, DefaultTheme.SidebarItem> = {};
   const rootSidebar: DefaultTheme.SidebarItem[] = [];
 
   for (const cate of cates) {
-    const subcates = cate.children && createSidebarItems(cate.children, sidebarByCate);
+    const link = `/${cate.name}`;
+    const subcates = cate.children && createSidebarItems(cate.children, link);
     const item = {
+      link,
       text: cate.text,
-      link: `/${cate.name}`,
       collapsed: true,
       items: subcates
     }
     rootSidebar.push(item);
-    sidebarByCate[cate.name] = item;
-    sidebar[`/${cate.name}`] = subcates;
+
+    if (!subcates) {
+      continue;
+    }
+
+    sidebar[link] = subcates;
+    sidebar[link].unshift({
+      link,
+      text: cate.text + ' - 全部文章'
+    });
   }
   sidebar['/'] = rootSidebar;
 
-  const files = globSync('docs/posts/*.md');
-  for (const file of files) {
-    const src = fs.readFileSync(file, 'utf-8');
-    const { data: frontmatter, excerpt } = matter(src);
-    const categoris: string[] = frontmatter.categories;
-    const lastCate = categoris[categoris.length - 1];
-    if (sidebarByCate[lastCate]) {
-      sidebarByCate[lastCate].items!.push({
-        text: frontmatter.title,
-        link: `${path.relative('docs', file)}`
-      });
-    }
-  }
+  console.log(JSON.stringify(sidebar, null, 2));
 
-  console.log(sidebar);
   return sidebar;
 }
 
-function createSidebarItems(cates: CateItem[], sidebarByCate: Record<string, DefaultTheme.SidebarItem>) {
+function createSidebarItems(cates: CateItem[], parentLink: string): DefaultTheme.SidebarItem[] {
   return cates.map(cate => {
+    const link = parentLink + '/' + cate.name;
     const sidebarItem = {
       text: cate.text,
-      link: `/${cate.name}`,
       collapsed: true,
-      items: cate.children ? createSidebarItems(cate.children, sidebarByCate) : []
+      items: cate.children ? createSidebarItems(cate.children, link) : crateFileItems(link)
     }
-    sidebarByCate[cate.name] = sidebarItem;
 
     return sidebarItem;
   })
+}
+
+function crateFileItems(parentLink: string) {
+  const files = globSync(`docs/${parentLink}/*.md`);
+
+  return files.map(file => {
+    const src = fs.readFileSync(file, 'utf-8');
+    const { data: frontmatter, excerpt } = matter(src);
+
+    return {
+      text: frontmatter.title,
+      link: '/' + path.posix.relative('docs/', file).replace('.md',  ''),
+      date: frontmatter.date,
+    };
+  }).sort((a, b) => (+new Date(b.date) - +new Date(a.date)))
 }
