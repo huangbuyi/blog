@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "gray-matter": "^4.0.3",
+    "tinyglobby": "^0.2.10",
+    "vitepress": "^1.5.0"
+  }
+}
