@@ -10,12 +10,20 @@ export const cates: CateItem[] = [
     name: 'frontend',
     children: [
       {
+        text: 'TypeScript 实用技巧',
+        name: 'pratical-typescript-tips'
+      },
+      {
         text: 'JavaScript 实用技巧',
         name: 'pratical-javascript-tips'
       },
       {
-        text: 'TypeScript 实用技巧',
-        name: 'pratical-typescript-tips'
+        text: 'Vue 生态',
+        name: 'vue-ecosystem'
+      },
+      {
+        text: 'React 生态',
+        name: 'react-ecosystem'
       },
       {
         text: 'CSS 实用技巧',
@@ -56,6 +64,12 @@ export const cates: CateItem[] = [
   {
     text: '人工智能',
     name: 'ai',
+    children: [
+      {
+        text: '强化学习',
+        name: 'reinforcement-learning'
+      }
+    ]
   },
   {
     text: '计算机科学',
@@ -73,7 +87,13 @@ export const cates: CateItem[] = [
   },
   {
     text: '产品&设计',
-    name: 'product-and-design'
+    name: 'product-and-design',
+    children: [
+      {
+        text: '笔记',
+        name: 'notes'
+      },
+    ]
   },
   {
     text: '计算机技术',
@@ -82,6 +102,16 @@ export const cates: CateItem[] = [
       {
         text: 'Windows 实用技巧',
         name: 'windows-pratical-tips'
+      },
+    ]
+  },
+  {
+    text: '代码之外',
+    name: 'beyond-code',
+    children: [
+      {
+        text: '从0开始的1世界生活',
+        name: 'life'
       },
     ]
   }

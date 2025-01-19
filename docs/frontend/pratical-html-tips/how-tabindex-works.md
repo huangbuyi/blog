@@ -1,5 +1,6 @@
 ---
 title: HTML tabindex 属性是如何工作的？
+date: 2024-10-10
 ---
 
 HTML 元素设置`tabindex`属性后，可以触发聚焦（`focus`）和离焦（`blur`）事件，通过按下键盘上的 <kbd>Tab</kbd> 能够在可聚焦的元素间切换。`tabindex`值会改变 <kbd>Tab</kbd> 切换行为方式：

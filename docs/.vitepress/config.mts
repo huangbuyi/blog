@@ -7,7 +7,7 @@ import path from 'path';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "「头哥」的技术博客",
+  title: "「头哥」的博客",
   head: [
     ['link', { rel: 'icon', href: '/blog/favicon.ico' }]
   ],
@@ -51,7 +51,7 @@ function createSidebar(cates: CateItem[]): DefaultTheme.Sidebar {
     sidebar[link] = subcates;
     sidebar[link].unshift({
       link,
-      text: cate.text + ' - 全部文章'
+      text: cate.text + ' - 近期文章'
     });
   }
   sidebar['/all-articles'] = rootSidebar;

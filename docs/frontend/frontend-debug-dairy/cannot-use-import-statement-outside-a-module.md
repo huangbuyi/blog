@@ -1,3 +1,8 @@
+---
+title: TS 报错 Cannot use import statement outside a module
+date: 2022-07-07
+---
+
 `package.json`添加：
 
 ```json
