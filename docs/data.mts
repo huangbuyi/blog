@@ -46,6 +46,12 @@ export const cates: CateItem[] = [
   {
     text: '大后端',
     name: 'backend',
+    children: [
+      {
+        text: 'NodeJS 实用技巧',
+        name: 'nodejs-pratical-tips'
+      }
+    ]
   },
   {
     text: '人工智能',

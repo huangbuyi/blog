@@ -4,5 +4,5 @@ import ArticleList from '../ArticleList.vue';
 </script>
 
 <div>
-  <ArticleList cate="frontend" title="最新文章" />
+  <ArticleList cate="product-and-design" title="最新文章" />
 </div>
