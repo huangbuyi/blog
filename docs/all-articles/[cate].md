@@ -7,5 +7,5 @@ const { params, title } = useData();
 </script>
 
 <div>
-  <ArticleList :cate="params.cate === 'index' ? '' : params.cate" :title="params.title"  :max="999" />
+  <ArticleList :cate="params.cate === 'index' ? '' : params.cate" :title="params.title" all />
 </div>

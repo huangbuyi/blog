@@ -1,6 +1,7 @@
 ---
 title: Git Flow 简介
 date: 2024-10-17
+cover: /images/git-flow.png
 ---
 
 

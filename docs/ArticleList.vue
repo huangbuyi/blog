@@ -3,19 +3,18 @@ import { computed } from 'vue';
 import { data } from './posts.data.mjs';
 import { base } from './data.mjs';
 
-const { cate, title, max } = defineProps<{
+const { cate, title, max, all } = defineProps<{
   cate?: string,
   title?: string,
   max?: number,
+  all?: boolean
 }>();
 
 const posts = computed(() => {
   return data.filter(item => {
     return item.url.startsWith(`${base}${cate || ''}`);
-  }).slice(0, max || 100)
+  }).slice(0, all ? undefined : (max || 100))
 })
-
-console.log(posts);
 
 </script>
 
@@ -40,7 +39,7 @@ console.log(posts);
         <hr />
       </li>
     </ul>
-    <a :href="`/all-articles/${cate || ''}`">全部文章</a>
+    <a v-if="!all" :href="`${base}all-articles/${cate || ''}`">全部文章</a>
   </div>
 </template>
 
