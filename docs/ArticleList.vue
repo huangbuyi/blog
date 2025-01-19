@@ -15,6 +15,8 @@ const posts = computed(() => {
   }).slice(0, max || 100)
 })
 
+console.log(posts);
+
 </script>
 
 <template>
@@ -25,6 +27,9 @@ const posts = computed(() => {
         <a :href="post.url" class="article-item">
           <div class="date">{{ new Date(post.frontmatter.date).toLocaleDateString() }}</div>
           <div class="title">{{ post.frontmatter.title }}</div>
+          <div class="tags">
+            <span v-for="tag of post.tags" class="tag-item">{{ tag }}</span>
+          </div>
           <div v-if="post.frontmatter.cover" class="cover">
             <img :src="post.frontmatter.cover" alt="cover" class="cover-img" />
           </div>
@@ -63,6 +68,7 @@ const posts = computed(() => {
 }
 
 .article-item:hover {
+  color: #333;
   background-color: rgba(0,0,0,.1);
 }
 
@@ -75,6 +81,21 @@ const posts = computed(() => {
   font-size: 18px;
   font-weight: bold;
   color: #333;
+}
+
+.article-item .tags {
+  display: flex;
+  gap: 4px;
+  color: #999;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.article-item .tag-item {
+  border-radius: 4px;
+  padding: 4px 8px;
+  border: 1px solid rgba(0,0,0,.1);
+  line-height: 1;
 }
 
 .article-item .cover {

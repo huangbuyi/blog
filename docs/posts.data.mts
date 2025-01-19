@@ -1,9 +1,10 @@
 import { ContentData, createContentLoader } from 'vitepress';
-import { cates, base } from './data.mts';
+import { cates, base, CateItem } from './data.mts';
 import  * as cheerio from 'cheerio';
 import path from 'path';
 
-const target = cates.map(cate => `${cate.name}/**/*.md`)
+const target = cates.map(cate => `${cate.name}/**/*.md`);
+const tagByCate = createTagByCate(cates);
 
 export default createContentLoader(target, {
   includeSrc: true, // 包含原始 markdown 源?
@@ -22,11 +23,37 @@ export default createContentLoader(target, {
       return {
         ...item,
         url: path.posix.join(base, item.url),
-        excerptText: extractText(item.html)
+        excerptText: extractText(item.html),
+        tags: createTags(item.url),
       }
     });
   }
 })
+
+function createTagByCate(cates: CateItem[], tagByCate: Record<string, string> = {}) {
+  for (const cate of cates) {
+    tagByCate[cate.name] = cate.text;
+
+    if (cate.children) {
+      createTagByCate(cate.children, tagByCate);
+    }
+  }
+  return tagByCate;
+}
+
+function createTags(fileUrl: string) {
+  const cates = fileUrl.split('/');
+  const tags: string[] = [];
+
+  for (let i = 0; i < cates.length - 1; i++) {
+    const cate = cates[i];
+    if (tagByCate[cate]) {
+      tags.push(tagByCate[cate]);
+    }
+  }
+
+  return tags;
+}
 
 
 function extractText(htmlString?: string, length = 200) {
@@ -50,5 +77,5 @@ function extractText(htmlString?: string, length = 200) {
   return firstLengthChars;
 }
 
-declare const data: (ContentData & { excerptText: string })[];
+declare const data: (ContentData & { excerptText: string, tags: string[] })[];
 export { data };
