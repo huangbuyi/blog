@@ -59,7 +59,17 @@ export const cates: CateItem[] = [
   },
   {
     text: '计算机科学',
-    name: 'cs'
+    name: 'cs',
+    children: [
+      {
+        text: '数据结构与算法',
+        name: 'data-structures-and-algorithms'
+      },
+      {
+        text: '软件工程',
+        name: 'software-engineering'
+      }
+    ]
   },
   {
     text: '产品&设计',
