@@ -67,7 +67,13 @@ export const cates: CateItem[] = [
   },
   {
     text: '计算机技术',
-    name: 'ct'
+    name: 'ct',
+    children: [
+      {
+        text: 'Windows 实用技巧',
+        name: 'windows-pratical-tips'
+      },
+    ]
   }
 ]
 

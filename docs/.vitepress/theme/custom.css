@@ -3,3 +3,27 @@
   --vp-c-brand-1: #ff707a;
   --vp-c-brand-2: #ff858d;
 }
+
+kbd {
+  background-color: #eee;
+  border-radius: 3px;
+  border-bottom: 1px solid #b4b4b4;
+  box-shadow: 0 -1px 0 #00000033 inset;
+  color: #333;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 4px;
+  white-space: nowrap;
+  margin: 0 2px;
+  font-size: 14px;
+  padding: 4px 8px;
+  vertical-align: middle;
+}
+
+kbd:first-child {
+  margin-left: 0;
+}
+
+kbd:last-child {
+  margin-right: 0;
+}
