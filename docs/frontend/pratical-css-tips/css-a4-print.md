@@ -11,6 +11,7 @@ A4 纸尺寸是 21cm x 29.7cm，CSS 中同样可以使用 cm 作为单位，将 
   margin: 2cm;
 }
 ```
+
 设置打印时的样式
 
 ```css
@@ -20,9 +21,10 @@ A4 纸尺寸是 21cm x 29.7cm，CSS 中同样可以使用 cm 作为单位，将 
   }
 }
 ```
+
 在开发者工具中启用“打印”模式。
 
-![image](images/poEysrgcfZkFmS3IdN0JFgsVCFWHaATvTTdkZ5fHtN4.JPG)
+![image](/images/poEysrgcfZkFmS3IdN0JFgsVCFWHaATvTTdkZ5fHtN4.jpg)
 
 要实现屏幕上显示效果和打印效果一致，要注意边距的设置。因为打印时会自动为纸张加上边距，所以要让
 
