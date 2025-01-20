@@ -18,5 +18,5 @@ Angular: contructor, ngOnChanges, ngOnInit, ngDoCheck, ngAfterContentInit, ngAft
 
 小程序: onLoad, onShow, onReady, onHide, onUnload
 
-![wechat miniprogram lifecycle](/images/wechat-miniprogram-lifecycle)
+![wechat miniprogram lifecycle](/images/wechat-miniprogram-lifecycle.png)
 
