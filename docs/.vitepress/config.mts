@@ -1,5 +1,5 @@
 import { defineConfig, DefaultTheme } from 'vitepress';
-import { CateItem, cates } from '../data.mjs';
+import { CateItem, cates, base } from '../data.mjs';
 import matter from 'gray-matter';
 import { globSync } from 'tinyglobby';
 import fs from 'fs';
@@ -9,10 +9,10 @@ import path from 'path';
 export default defineConfig({
   title: "「头哥」的博客",
   head: [
-    ['link', { rel: 'icon', href: '/blog/favicon.ico' }]
+    ['link', { rel: 'icon', href: `${base}favicon.ico` }]
   ],
   description: "Neo's computer science blog.",
-  base: "/",
+  base: base,
   cleanUrls: true,
   themeConfig: {
     logo: '/icons/logo-be.svg',
